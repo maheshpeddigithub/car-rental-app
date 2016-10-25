@@ -21,71 +21,71 @@ import org.junit.Test;
 
 public class RentalAppTest {
 
-	RentalApp rentalApp;
+    RentalApp rentalApp;
 
-	@Before
-	public void setUp() {
-		// Given
-		rentalApp = new RentalApp(15);
-	}
+    @Before
+    public void setUp() {
+        // Given
+        rentalApp = new RentalApp(15);
+    }
 
-	@Test
-	public void tripCostForSwiftDieselNonACPuneMumbaiBangalorePuneLimitedPassengers() {
-		// When
-		double totalDistanceTravelled = PUNE_TO_MUMBAI + MUMBAI_TO_BANGALORE + PUNE_TO_BANGALORE;
-		int numberOfPassengers = 3;
+    @Test
+    public void tripCostForSwiftDieselNonACPuneMumbaiBangalorePuneLimitedPassengers() {
+        // When
+        double totalDistanceTravelled = PUNE_TO_MUMBAI + MUMBAI_TO_BANGALORE + PUNE_TO_BANGALORE;
+        int numberOfPassengers = 3;
 
-		// Then
-		assertEquals("inaccurate trip cost", 28000.0,
-			rentalApp.tripCost(CAR, DIESEL, NONAC, totalDistanceTravelled, numberOfPassengers));
-	}
+        // Then
+        assertEquals("inaccurate trip cost", 28000.0,
+                rentalApp.tripCost(CAR, DIESEL, NONAC, totalDistanceTravelled, numberOfPassengers));
+    }
 
-	@Test
-	public void tripCostForSwiftDieselNonACPuneMumbaiPassengersLimitExceeded() {
-		// When
-		double totalDistanceTravelled = PUNE_TO_MUMBAI;
-		int numberOfPassengers = 6;
+    @Test
+    public void tripCostForSwiftDieselNonACPuneMumbaiPassengersLimitExceeded() {
+        // When
+        double totalDistanceTravelled = PUNE_TO_MUMBAI;
+        int numberOfPassengers = 6;
 
-		// Then
-		assertEquals("inaccurate trip cost", 4000.0,
-			rentalApp.tripCost(CAR, DIESEL, NONAC, totalDistanceTravelled, numberOfPassengers));
-	}
+        // Then
+        assertEquals("inaccurate trip cost", 4000.0,
+                rentalApp.tripCost(CAR, DIESEL, NONAC, totalDistanceTravelled, numberOfPassengers));
+    }
 
-	@Test
-	public void tripCostForVolvoDieselACPuneMumbaiPuneLimitedPassengers() {
-		// When
-		double totalDistanceTravelled = 2 * PUNE_TO_MUMBAI;
-		int numberOfPassengers = 36;
+    @Test
+    public void tripCostForVolvoDieselACPuneMumbaiPuneLimitedPassengers() {
+        // When
+        double totalDistanceTravelled = 2 * PUNE_TO_MUMBAI;
+        int numberOfPassengers = 36;
 
-		// Then
-		assertEquals("inaccurate trip cost", 6272.0,
-			rentalApp.tripCost(BUS, DIESEL, AC, totalDistanceTravelled, numberOfPassengers));
-	}
+        // Then
+        assertEquals("inaccurate trip cost", 6272.0,
+                rentalApp.tripCost(BUS, DIESEL, AC, totalDistanceTravelled, numberOfPassengers));
+    }
 
-	@Test
-	public void tripCostForBMWPetrolACMumbaiDelhiPassengersLimitMaximised() {
-		// When
-		double totalDistanceTravelled = MUMBAI_TO_DELHI;
-		int numberOfPassengers = 7;
+    @Test
+    public void tripCostForBMWPetrolACMumbaiDelhiPassengersLimitMaximised() {
+        // When
+        double totalDistanceTravelled = MUMBAI_TO_DELHI;
+        int numberOfPassengers = 7;
 
-		// Then
-		assertEquals("inaccurate trip cost", 34850.0,
-			rentalApp.tripCost(SUV, PETROL, AC, totalDistanceTravelled, numberOfPassengers));
-	}
+        // Then
+        assertEquals("inaccurate trip cost", 34850.0,
+                rentalApp.tripCost(SUV, PETROL, AC, totalDistanceTravelled, numberOfPassengers));
+    }
 
-	@Test
-	public void tripCostForToyotaPetrolNonACMumbaiChennaiPassengersLimitMaximised() {
-		// When
-		double totalDistanceTravelled = MUMBAI_TO_CHENNAI;
-		int numberOfPassengers = 10;
+    @Test
+    public void tripCostForToyotaPetrolNonACMumbaiChennaiPassengersLimitMaximised() {
+        // When
+        double totalDistanceTravelled = MUMBAI_TO_CHENNAI;
+        int numberOfPassengers = 10;
 
-		// Then
-		assertEquals("inaccurate trip cost", 18517.5,
-			rentalApp.tripCost(VAN, PETROL, NONAC, totalDistanceTravelled, numberOfPassengers));
-	}
+        // Then
+        assertEquals("inaccurate trip cost", 18517.5,
+                rentalApp.tripCost(VAN, PETROL, NONAC, totalDistanceTravelled, numberOfPassengers));
+    }
 
-	@After
-	public void tearDown() {
-		rentalApp = null;
-	}
+    @After
+    public void tearDown() {
+        rentalApp = null;
+    }
 }
